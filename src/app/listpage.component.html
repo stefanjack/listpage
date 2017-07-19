@@ -1,0 +1,12 @@
+<div style="text-align:center" class="container">
+  <!--search component-->
+  <search (searchTermChange)="searchFilter($event)"></search>
+  
+  <!--list component-->
+  <list [display]="display" (onEdit)="editRow($event)" *ngIf="display.length>0"></list>
+  
+  <div class="no-file-wrapper" *ngIf="display.length<=0">
+	<img src="../assets/file-not-found.png" width="350px">
+  </div>
+  
+</div>

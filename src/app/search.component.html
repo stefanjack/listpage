@@ -1,0 +1,5 @@
+<div class="searchbar-div">
+	<input [(ngModel)]="searchTerm" placeholder="Search" class="searchbar-input" (ngModelChange)="searchTermChange.emit(searchTerm)">
+	<img src="../assets/delete.png" *ngIf="searchTerm" (click)="clearSearch()" width="14px" class="searchbar-delete">
+</div>
+<br>

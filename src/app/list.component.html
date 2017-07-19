@@ -1,0 +1,22 @@
+<div>
+	<table>
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Description</th>
+	</tr>
+	<tr *ngFor="let d of display; let i=index;">
+		<td>{{d.id}}</td>
+		<td>
+			<span (dblclick)="onSelect(i,'name')" *ngIf="selectedIndex!=i || selectedType!='name'">{{d.name}}</span>
+			<input [(ngModel)]="d.name" *ngIf="selectedIndex==i && selectedType=='name'" (focusout)="resetSelect(false)" (keyup.enter)="edit(d.id, d.name, d.description)" focus>
+		</td>
+		<td>
+			<span (dblclick)="onSelect(i,'description')" *ngIf="selectedIndex!=i || selectedType!='description'">{{d.description}}</span>
+			<input [(ngModel)]="d.description" *ngIf="selectedIndex==i && selectedType=='description'" (focusout)="resetSelect(false)" (keyup.enter)="edit(d.id, d.name, d.description)" focus>
+			<div class="space"></div>
+			<a routerLink="/edit/{{d.id}}"><img src="../assets/edit.png" width="20px" class="edit-button" (click)="onSelect(d)"></a>
+		</td>
+	</tr>
+	</table>
+</div>

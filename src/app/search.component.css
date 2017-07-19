@@ -1,0 +1,16 @@
+.searchbar-div{
+	background-color:#ddd;
+	border-radius:10px;
+	padding:4px 0 4px 0;
+	max-width:350px;
+}
+
+.searchbar-input{
+	background-color:transparent;
+	border:none;
+	font-size:20px;
+}
+
+.searchbar-delete{
+	cursor:pointer;
+}
