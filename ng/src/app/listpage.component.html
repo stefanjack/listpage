@@ -1,0 +1,17 @@
+<div style="text-align:center" class="container">
+  <!--search component-->
+  <search (searchTermChange)="searchFilter($event)"></search>
+  
+  <!--list component-->
+  <list [display]="display" (onEdit)="editRow($event)" *ngIf="display.length>0"></list>
+  
+  <div class="no-file-wrapper" *ngIf="display.length<=0">
+	<img src="../assets/file-not-found.png" width="350px">
+  </div>
+  
+  <button (click)="changePage(1)">1</button>
+  <button (click)="changePage(2)">2</button>
+  
+  <a routerLink="/add"><button>Add</button></a>
+  
+</div>
